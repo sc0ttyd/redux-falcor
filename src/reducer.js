@@ -9,7 +9,7 @@ export default function falcorReducer(state = initialState, action) {
   case RETRIEVE_PATHS:
   case SET_PATH:
   case CALL_PATH:
-    return merge(state, action.res.json);
+    return merge(state, action.res ? action.res.json : {});
   default:
     return state;
   }
